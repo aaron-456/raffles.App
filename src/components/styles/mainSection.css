@@ -1,0 +1,5 @@
+.raffleImg__box {
+    background-color:var( --color-gray);
+    width: 500px;
+    height: 400px;
+  }
