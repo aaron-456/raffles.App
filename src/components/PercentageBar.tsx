@@ -1,9 +1,11 @@
-import React from 'react';
+import React from "react";
 
 const PercentageBar = () => {
   return (
-    <div className="percentageBar__app">0.80%</div>
-  )
-}
+    <div className="percentageBar__app">
+      <span className="percentage__number">0.80%</span>
+    </div>
+  );
+};
 
-export default PercentageBar
+export default PercentageBar;
