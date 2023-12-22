@@ -2,6 +2,7 @@
 import "./App.css";
 import GeneralInformation_Section from "./components/GeneralInformation_Section";
 import MainSection from "./components/MainSection";
+import ShoppingCart_Section from "./components/shoppingCart_Section";
 
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
       <div className="app">
         <MainSection />
         <GeneralInformation_Section />
+        <ShoppingCart_Section />
       </div>
     </>
   );

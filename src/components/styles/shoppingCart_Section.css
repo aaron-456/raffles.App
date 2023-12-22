@@ -1,0 +1,107 @@
+.shoppingCart__section {
+  /* flex-direction: column;
+    align-items: center; */
+}
+
+.alertMessage__box {
+  background-color: var(--color-pink-two);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 340px;
+  height: 48px;
+  margin: 0 auto;
+  border-radius: 0.9em;
+}
+
+.alert__span {
+  font-weight: 800;
+  font-size: 12.1px;
+}
+
+.counter-and-value__box {
+  margin-top: 1.6em;
+  display: flex;
+  justify-content: space-around;
+
+  gap: 4em;
+}
+
+.counter,
+.value {
+  margin-top: 1.2em;
+  border-radius: 0.9em;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: black;
+  font-weight: 800;
+}
+
+.valueToPay__box,
+.counter__box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.titleCv {
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.counter,
+.value {
+  background-color: #f6dbab;
+  width: 165px;
+  height: 43px;
+  display: flex;
+  cursor: pointer;
+}
+
+.decrement__button,
+.increment__button {
+  border: none;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  font-size: 32px;
+}
+
+.counter__value {
+  font-size: 19px;
+}
+
+.buyRaffle__box {
+  margin-top: 1.5em;
+}
+
+.buyRaffle__btn {
+  background-color: var(--color-purple);
+  border-radius: 0.9em;
+  width: 220px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  border: none;
+  gap: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.buyRaffle__btn:active {
+  box-shadow: 0 0 5px rgba(104, 104, 254, 0.8);
+}
+
+.buyRaffle__btn:hover {
+  background-color: #5858e6;
+}
+
+.buy__span {
+  font-weight: 700;
+}
