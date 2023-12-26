@@ -58,7 +58,6 @@
   width: 165px;
   height: 43px;
   display: flex;
-  cursor: pointer;
 }
 
 .decrement__button,
@@ -67,6 +66,7 @@
   background-color: transparent;
   display: flex;
   justify-content: center;
+  cursor: pointer;
   font-size: 32px;
 }
 

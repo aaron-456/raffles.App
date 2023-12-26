@@ -1,7 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import "./styles/shoppingCart_Section.css";
 
 const ShoppingCart_Section = () => {
+  const [numberCount, setNumberCount] = useState(2);
+
+  const handleIncrement = () => {
+    setNumberCount(numberCount + 1);
+  };
+
+  const handleDecrement = () => {
+    if (numberCount > 2) {
+      setNumberCount(numberCount - 1);
+    }
+  };
+
   return (
     <section className="shoppingCart__section">
       <div className="alertMessage__box">
@@ -13,11 +25,11 @@ const ShoppingCart_Section = () => {
           <p className="titleCv">Nº OPORTUNIDADES</p>
 
           <div className="counter">
-            <button className="decrement__button">
+            <button className="decrement__button" onClick={handleDecrement}>
               <i className="bx bx-chevron-left"></i>
             </button>
-            <p className="counter__value">2</p>
-            <button className="increment__button">
+            <p className="counter__value">{numberCount}</p>
+            <button className="increment__button" onClick={handleIncrement}>
               <i className="bx bx-chevron-right"></i>
             </button>
           </div>
