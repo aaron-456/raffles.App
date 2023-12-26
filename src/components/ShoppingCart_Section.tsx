@@ -3,16 +3,23 @@ import "./styles/shoppingCart_Section.css";
 
 const ShoppingCart_Section = () => {
   const [numberCount, setNumberCount] = useState(2);
+  const [valueToPay, setValueToPay] = useState(30000);
 
   const handleIncrement = () => {
     setNumberCount(numberCount + 1);
+    setValueToPay(valueToPay + 15000);
   };
 
   const handleDecrement = () => {
     if (numberCount > 2) {
       setNumberCount(numberCount - 1);
+      setValueToPay(valueToPay - 15000);
     }
   };
+
+  const customValueToPay = valueToPay
+    .toLocaleString("es-CO")
+    .replace(/\./g, ",");
 
   return (
     <section className="shoppingCart__section">
@@ -38,7 +45,7 @@ const ShoppingCart_Section = () => {
         <div className="valueToPay__box">
           <p className="titleCv">VALOR A PAGAR $</p>
           <div className="value">
-            <span className="value__span">$60,000 COP</span>
+            <span className="value__span">{`$ ${customValueToPay} COP`}</span>
           </div>
         </div>
       </div>
