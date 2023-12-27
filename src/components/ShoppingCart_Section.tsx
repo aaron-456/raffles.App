@@ -1,9 +1,29 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./styles/shoppingCart_Section.css";
+import ModalForm from "./ModalForm";
 
 const ShoppingCart_Section = () => {
   const [numberCount, setNumberCount] = useState(2);
   const [valueToPay, setValueToPay] = useState(30000);
+  const [visibleModal, setVisibleModal] = useState(false);
+
+  //Funciones para el modal de el formulario
+
+  const handeleOpenModal = () => {
+    setVisibleModal(true);
+  };
+
+  useEffect(() => {
+    console.log("Cerrando modal", visibleModal);
+  }, [visibleModal]);
+
+  const handleCloseModal = () => {
+
+    setVisibleModal(false);
+    
+  };
+
+  //
 
   const handleIncrement = () => {
     setNumberCount(numberCount + 1);
@@ -51,11 +71,15 @@ const ShoppingCart_Section = () => {
       </div>
 
       <div className="buyRaffle__box">
-        <button className="buyRaffle__btn">
+        <button onClick={handeleOpenModal} className="buyRaffle__btn">
           <span className="buy__span">COMPRAR</span>
           <i className="bx bx-cart-add"></i>
         </button>
+        {visibleModal && (
+            <ModalForm onClose={handleCloseModal} />
+          )}
       </div>
+
 
       <div className="hr__box">
         <hr className="hr" />

@@ -1,0 +1,17 @@
+.modalForm__container {
+  background-color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.modalForm__box {
+  background-color: var(--color-orange);
+  height: 100%;
+  margin-left: 4%;
+  margin-right: 4%;
+  overflow-y: auto;
+
+}
