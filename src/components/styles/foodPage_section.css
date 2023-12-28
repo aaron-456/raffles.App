@@ -1,0 +1,47 @@
+.foo_page{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+
+    & .btn1, .btn2, .btn3{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 180px;
+        height: 40px;
+        border-radius: 10px;
+        border: none;
+        gap: 0.5rem;
+    }
+
+    & .btn1{
+        background-color: rgb(69, 164, 69);
+        & img{
+            width: 30px;
+        }
+    }
+    & .btn2{
+        background-color: rgb(180, 50, 240);
+        & img{
+            width: 30px;
+        }
+    }
+
+    & .btn3{
+        width: 190px;
+        background-color:rgb(111, 85, 56) ;
+    }
+
+
+}
+
+.cont_1{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    gap: 2rem;
+}
+
