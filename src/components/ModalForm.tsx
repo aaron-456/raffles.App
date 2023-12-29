@@ -3,18 +3,18 @@ import "./styles/modalForm.css";
 
 const ModalForm = ({ onClose }) => {
   return (
-    <div className="modalForm__container">
-      <div className="modalForm__box">
-        <div className="closeForm__box" onClick={onClose}>
+    <div className="modal-form-container">
+      <div className="modal-form-box">
+        <div className="close-form-box" onClick={onClose}>
           <i className="bx bx-left-arrow-alt"></i>
         </div>
 
-        <div className="text__form">
-          <h4 className="textForm__one">!ESTAS A UN PASO DE PARTICIPAR!🤑🔥</h4>
-          <h4 className="textForm__two">Diligencia este formulario🚖🔥</h4>
+        <div className="form-text">
+          <h4 className="form-text-one">!ESTAS A UN PASO DE PARTICIPAR!🤑🔥</h4>
+          <h4 className="form-text-two">Diligencia este formulario🚖🔥</h4>
         </div>
 
-        <form action="/submit">
+        <form action="/submit" className="user-form">
           <label htmlFor="name">Nombre *</label>
           <input type="text" id="name" name="name" />
 
@@ -37,36 +37,51 @@ const ModalForm = ({ onClose }) => {
           <input type="email" id="email" name="email" />
         </form>
 
-        <div className="purchaseDetail__box">
-          <h4 className="text__purchaseDetail ">DETALLE DE TU COMPRA $ $</h4>
-          <hr />
-          <div>
+        <div className="purchase-detail-box">
+          <div className="purchase-detail-text-box">
+            <h4 className="purchase-detail-text">DETALLE DE TU COMPRA </h4>
+            <span className="purcharse-detail-text-span">$ $</span>
+          </div>
+
+          <hr className="purcharse-hr" />
+          <div className="purchase-detail-item">
             <p>Poducto</p>
             <p>Subtotal</p>
           </div>
-          <div>
-            <div>
-              <p>Ticket Mazda CX-5 x 2</p>
-              <span>X2</span>
+          <hr className="purcharse-hr" />
+          <div className="purchase-detail-item">
+            <div className="purchase-tickets">
+              <p>Ticket Mazda CX-5</p>
+              <span>x2</span>
             </div>
             <p>$30,000</p>
           </div>
-          <div>
+          <hr className="purcharse-hr" />
+          <div className="purchase-detail-item">
             <p>Subtotal</p>
             <p>$30,000</p>
           </div>
-          <div>
+          <hr className="purcharse-hr" />
+          <div className="purchase-detail-item">
             <p>Total</p>
             <p>$30,000</p>
           </div>
         </div>
 
-        <div>
-          <div>
+        <div className="wompi-box">
+          <div className="wompi-cont-box">
             <img src="/Wompi_LogoPrincipal.jpg" alt="image not found" />
             <img src="/banner-wompi.jpg" alt="image not found" />
           </div>
-          <p>paga a travex de Wompi</p>
+          <p className="wompi-text">Paga a travex de Wompi</p>
+        </div>
+        <div className="payment-button-box">
+          <button className="payment-button">
+            <p className="payment-text-button">Realizar Pago</p>
+            <p className="opportunity-text">
+              no te pierdas de esta oportunidad
+            </p>
+          </button>
         </div>
       </div>
     </div>

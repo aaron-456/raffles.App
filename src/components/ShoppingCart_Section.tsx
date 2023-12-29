@@ -11,15 +11,17 @@ const ShoppingCart_Section = () => {
 
   const handeleOpenModal = () => {
     setVisibleModal(true);
+    document.body.style.overflow = "hidden";
   };
 
-  useEffect(() => {
-    console.log("Cerrando modal", visibleModal);
-  }, [visibleModal]);
+  // useEffect(() => {
+  //   console.log("Cerrando modal", visibleModal);
+  // }, [visibleModal]);
 
   const handleCloseModal = () => {
 
     setVisibleModal(false);
+    document.body.style.overflow = "auto";
     
   };
 

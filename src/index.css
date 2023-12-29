@@ -6,6 +6,7 @@ body {
 
 :root {
   --color-white: #fff;
+  --color-black:#000;
   --color-pink: #ef9a9a;
   --color-gray: #cccccc;
   --color-gray-two: #616161;
@@ -13,5 +14,6 @@ body {
   --color-orange: #f44336;
   --color-green: #4caf50;
   --color-lightBlue: #03a9f4;
+  --color-lightBlue-two:#1e88e5;
   --color-purple:#6868fe;
 }
