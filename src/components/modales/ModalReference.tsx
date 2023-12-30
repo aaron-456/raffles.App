@@ -1,7 +1,10 @@
 import React, { useRef } from 'react';
 import './styles/modalReference.css'
+import { useBoolean } from "../../context/MiContextoProvider";
 
 const ModalReference = () => {
+
+    const { setBoolean }=useBoolean()
 
     const inputRef = useRef();
     const handlePaste = () => {
@@ -23,7 +26,7 @@ const ModalReference = () => {
                             </div>
                         </div>
                         <br />
-                        <button  className='btn_verifi'><strong>Verificar</strong></button>
+                        <button  data-bs-dismiss="modal" onClick={()=>{setBoolean(true)}} className='btn_verifi'><strong>Verificar</strong></button>
                     </div>
                 </div>
             </div>
