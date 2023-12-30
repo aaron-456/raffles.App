@@ -1,6 +1,58 @@
 .body_modal{
-    height: 300px;
+    height: 350px;
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 .modal_{
-    margin-top: 100px;
+    margin-top: 90px;
+}
+
+.blue_modal{
+    height: 100%;
+    background-color: rgb(198, 198, 249);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    & b{
+        font-size: 1.2rem;
+    }
+
+}
+
+.content_form_reference{
+
+    & input{
+        position: relative;
+        border: 1px solid black;
+        width: 300px;
+        height: 60px;
+        border-radius: 10px;
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+    & button{
+        margin: 18px 10px;
+        position: absolute;
+        border: none;
+        right:0px;
+        background-color: white;
+        color: blue;
+    }
+    & input:focus{
+        outline: none;
+    }
+}
+
+.btn_verifi{
+    border: none;
+    width: 200px;
+    height: 40px;
+    border-radius: 10px;
+    background-color: rgb(186, 44, 44);
+
+    & strong{
+        font-size: 1.1rem;
+    }
 }

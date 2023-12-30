@@ -18,13 +18,13 @@
     }
 
     & .btn1{
-        background-color: rgb(69, 164, 69);
+        background-color: #4caf50;
         & img{
             width: 30px;
         }
     }
     & .btn2{
-        background-color: rgb(180, 50, 240);
+        background-color: #ba68c8;
         & img{
             width: 30px;
         }
@@ -32,7 +32,7 @@
 
     & .btn3{
         width: 190px;
-        background-color:rgb(111, 85, 56) ;
+        background-color:#c04848;
     }
 
 

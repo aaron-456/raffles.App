@@ -2,8 +2,10 @@ import React from 'react'
 import './styles/foodPage_section.css'
 import iconWasapp from '../assets/icons8-whatsapp.svg'
 import ModalReference from './modales/ModalReference'
+import { useBoolean } from '../context/MiContextoProvider'
 
 const FoodPage_section = () => {
+
     return (
         <div>
             <div className='foo_page'>
