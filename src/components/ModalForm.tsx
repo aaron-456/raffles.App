@@ -1,7 +1,47 @@
-import React from "react";
+import React, { useState } from "react";
 import "./styles/modalForm.css";
 
 const ModalForm = ({ onClose }) => {
+  const [formData, setFormData] = useState({
+    name: "",
+    lastname: "",
+    country: "COLOMBIA",
+    address: "",
+    city: "",
+    phone: "",
+    email: "",
+  });
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await fetch("http://localhost:80/api/post", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        console.log("The data has been sent successfully");
+      } else {
+        console.log("Error sending data");
+      }
+    } catch (error) {
+      console.log("Error sending request");
+    }
+  };
+
   return (
     <div className="modal-form-container">
       <div className="modal-form-box">
@@ -16,25 +56,67 @@ const ModalForm = ({ onClose }) => {
 
         <form action="/submit" className="user-form">
           <label htmlFor="name">Nombre *</label>
-          <input type="text" id="name" name="name" />
+          <input
+            type="text"
+            id="name"
+            name="name"
+            value={formData.name}
+            onChange={handleInputChange}
+          />
 
-          <label htmlFor="lastName">Apellido *</label>
-          <input type="text" id="lastName" name="lastName" />
+          <label htmlFor="lastname">Apellido *</label>
+          <input
+            type="text"
+            id="lastname"
+            name="lastname"
+            value={formData.lastname}
+            onChange={handleInputChange}
+          />
 
           <label htmlFor="country">Pais *</label>
-          <input type="text" id="country" name="country" />
+          <input
+            type="text"
+            id="country"
+            name="country"
+            value={formData.country}
+            readOnly
+          />
 
-          <label htmlFor="country">Direccion *</label>
-          <input type="text" id="address" name="address" />
+          <label htmlFor="address">Direccion *</label>
+          <input
+            type="text"
+            id="address"
+            name="address"
+            value={formData.address}
+            onChange={handleInputChange}
+          />
 
           <label htmlFor="city">Ciudad *</label>
-          <input type="text" id="city" name="city" />
+          <input
+            type="text"
+            id="city"
+            name="city"
+            value={formData.city}
+            onChange={handleInputChange}
+          />
 
           <label htmlFor="phone">Telefono *</label>
-          <input type="tel" id="phone" name="phone" />
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            value={formData.phone}
+            onChange={handleInputChange}
+          />
 
           <label htmlFor="email">Correo Electronico *</label>
-          <input type="email" id="email" name="email" />
+          <input
+            type="email"
+            id="email"
+            name="email"
+            value={formData.email}
+            onChange={handleInputChange}
+          />
         </form>
 
         <div className="purchase-detail-box">
@@ -75,8 +157,9 @@ const ModalForm = ({ onClose }) => {
           </div>
           <p className="wompi-text">Paga a travex de Wompi</p>
         </div>
+
         <div className="payment-button-box">
-          <button className="payment-button">
+          <button className="payment-button" onClick={handleSubmit}>
             <p className="payment-text-button">Realizar Pago</p>
             <p className="opportunity-text">
               no te pierdas de esta oportunidad
