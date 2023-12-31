@@ -47,7 +47,7 @@ const ModalForm = ({ onClose }) => {
     e.preventDefault();
 
     // Verificar valores vacíos y actualizar errores
-    const newErrors = {};
+    const newErrors =  {};
     Object.entries(formData).forEach(([key, value]) => {
       if (value.trim() === "") {
         newErrors[key] = errorMessages[key];

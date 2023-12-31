@@ -1,17 +1,20 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import './styles/modalReference.css'
 import { useBoolean } from "../../context/MiContextoProvider";
 
 const ModalReference = () => {
-
-    const { setBoolean }=useBoolean()
+    
+    const { setBoolean, setReference } = useBoolean()
+    const [ref, setref] = useState('')
 
     const inputRef = useRef();
-    const handlePaste = () => {
+    const handlePaste = () => { 
         const clipboardData = navigator.clipboard.readText();
-        clipboardData.then((text) => {
-            inputRef.current.value = text;
-        });
+        if (inputRef.current) {
+            clipboardData.then((text) => {
+                inputRef.current.value = text;
+            }); 
+        }
     };
     return (
         <div className="modal fade modal_" id="exampleModal" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -21,12 +24,12 @@ const ModalReference = () => {
                         <b>ingrese el numero de transaccion</b>
                         <div className='content_form_reference'>
                             <div style={{position:"relative"}}>
-                                <input ref={inputRef} />
+                                <input  onChange={(e)=>{setref(e.target.value)}} ref={inputRef} />
                                 <button onClick={handlePaste}>Pegar</button>
                             </div>
                         </div>
                         <br />
-                        <button  data-bs-dismiss="modal" onClick={()=>{setBoolean(true)}} className='btn_verifi'><strong>Verificar</strong></button>
+                        <button  data-bs-dismiss="modal" onClick={()=>{setReference(ref),setBoolean(true)}} className='btn_verifi'><strong>Verificar</strong></button>
                     </div>
                 </div>
             </div>

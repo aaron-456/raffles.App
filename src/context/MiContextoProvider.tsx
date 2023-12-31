@@ -4,8 +4,9 @@ import React, { createContext, FC, ReactNode, useContext, useState } from 'react
 // Paso 1: Crear un contexto
 interface ContextProps {
   isBoolean: boolean;
-  toggleBoolean: () => void;
   setBoolean: (value: boolean) => void;
+  isReference: string;
+  setReference: (value: string) => void;
 }
 
 const BooleanContext = createContext<ContextProps | undefined>(undefined);
@@ -17,19 +18,24 @@ interface BooleanContextProviderProps {
 
 const BooleanContextProvider: FC<BooleanContextProviderProps> = ({ children }) => {
   const [isBoolean, setIsBoolean] = useState<boolean>(false);
+  const [isReference, setIsReference] = useState<string>('');
 
-  const toggleBoolean = () => {
-    setIsBoolean((prev) => !prev);
-  };
 
   const setBoolean = (value: boolean) => {
     setIsBoolean(value);
   };
 
+  const setReference = (value: string) => {
+    setIsReference(value);
+  };
+
+
+
   const contextValue: ContextProps = {
     isBoolean,
-    toggleBoolean,
     setBoolean,
+    isReference,
+    setReference,
   };
 
   return <BooleanContext.Provider value={contextValue}>{children}</BooleanContext.Provider>;
