@@ -12,16 +12,53 @@ const ModalForm = ({ onClose }) => {
     email: "",
   });
 
+  const [errors, setErrors] = useState({
+    name: "",
+    lastname: "",
+    address: "",
+    city: "",
+    phone: "",
+    email: "",
+  });
+
+  const errorMessages = {
+    name: "Por favor, ingrese su nombre",
+    lastname: "Por favor, ingrese su apellido",
+    address: "Por favor, ingrese su dirección",
+    city: "Por favor, ingrese su ciudad",
+    phone: "Por favor, ingrese su número de teléfono",
+    email: "Por favor, ingrese su correo electrónico",
+  };
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
       ...prevData,
       [name]: value,
     }));
+    // Limpiar el mensaje de error cuando el usuario comienza a escribir
+    setErrors((prevErrors) => ({
+      ...prevErrors,
+      [name]: "",
+    }));
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // Verificar valores vacíos y actualizar errores
+    const newErrors = {};
+    Object.entries(formData).forEach(([key, value]) => {
+      if (value.trim() === "") {
+        newErrors[key] = errorMessages[key];
+      }
+    });
+
+    if (Object.keys(newErrors).length > 0) {
+      // Si hay errores, actualizar el estado y devolver
+      setErrors(newErrors);
+      return;
+    }
 
     try {
       const response = await fetch("http://localhost:80/api/post", {
@@ -33,14 +70,15 @@ const ModalForm = ({ onClose }) => {
       });
 
       if (response.ok) {
-        console.log("The data has been sent successfully");
+        console.log("Los datos se enviaron correctamente");
       } else {
-        console.log("Error sending data");
+        console.log("Error al enviar los datos");
       }
     } catch (error) {
-      console.log("Error sending request");
+      console.log("Error al enviar la solicitud");
     }
   };
+
 
   return (
     <div className="modal-form-container">
@@ -62,7 +100,9 @@ const ModalForm = ({ onClose }) => {
             name="name"
             value={formData.name}
             onChange={handleInputChange}
+            required
           />
+          <span className="error-message">{errors.name}</span>
 
           <label htmlFor="lastname">Apellido *</label>
           <input
@@ -71,7 +111,9 @@ const ModalForm = ({ onClose }) => {
             name="lastname"
             value={formData.lastname}
             onChange={handleInputChange}
+            required
           />
+          <span className="error-message">{errors.lastname}</span>
 
           <label htmlFor="country">Pais *</label>
           <input
@@ -89,7 +131,9 @@ const ModalForm = ({ onClose }) => {
             name="address"
             value={formData.address}
             onChange={handleInputChange}
+            required
           />
+          <span className="error-message">{errors.address}</span>
 
           <label htmlFor="city">Ciudad *</label>
           <input
@@ -98,7 +142,9 @@ const ModalForm = ({ onClose }) => {
             name="city"
             value={formData.city}
             onChange={handleInputChange}
+            required
           />
+          <span className="error-message">{errors.city}</span>
 
           <label htmlFor="phone">Telefono *</label>
           <input
@@ -107,7 +153,9 @@ const ModalForm = ({ onClose }) => {
             name="phone"
             value={formData.phone}
             onChange={handleInputChange}
+            required
           />
+          <span className="error-message">{errors.phone}</span>
 
           <label htmlFor="email">Correo Electronico *</label>
           <input
@@ -116,10 +164,10 @@ const ModalForm = ({ onClose }) => {
             name="email"
             value={formData.email}
             onChange={handleInputChange}
+            required
           />
-        </form>
-
-        <div className="purchase-detail-box">
+          <span className="error-message">{errors.email}</span>
+                  <div className="purchase-detail-box">
           <div className="purchase-detail-text-box">
             <h4 className="purchase-detail-text">DETALLE DE TU COMPRA </h4>
             <span className="purcharse-detail-text-span">$ $</span>
@@ -166,6 +214,9 @@ const ModalForm = ({ onClose }) => {
             </p>
           </button>
         </div>
+        </form>
+
+
       </div>
     </div>
   );
