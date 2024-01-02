@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./styles/shoppingCart_Section.css";
-import ModalForm from "./ModalForm";
+import ModalForm from "./modales/ModalForm";
 
 const ShoppingCart_Section = () => {
   const [numberCount, setNumberCount] = useState(2);
@@ -13,10 +13,6 @@ const ShoppingCart_Section = () => {
     setVisibleModal(true);
     document.body.style.overflow = "hidden";
   };
-
-  // useEffect(() => {
-  //   console.log("Cerrando modal", visibleModal);
-  // }, [visibleModal]);
 
   const handleCloseModal = () => {
 
@@ -45,6 +41,7 @@ const ShoppingCart_Section = () => {
 
   return (
     <section className="shoppingCart__section">
+      
       <div className="alertMessage__box">
         <span className="alert__span">¡ QUE ESPERAS PARA PARTICIAPAR !</span>
       </div>

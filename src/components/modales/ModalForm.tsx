@@ -1,7 +1,9 @@
 import React, { useState } from "react";
-import "./styles/modalForm.css";
+import "../styles/modalForm.css";
+import ModalWompi from "./ModalWompi";
 
 const ModalForm = ({ onClose }) => {
+  const [showSuccessModal, setShowSuccessModal] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     lastname: "",
@@ -11,6 +13,16 @@ const ModalForm = ({ onClose }) => {
     phone: "",
     email: "",
   });
+
+  const handleOpenSuccessModal = () => {
+    setShowSuccessModal(true);
+  };
+
+  const handleCloseModal = (e) => {
+    if (e.target.classList.contains("modal-form-box")) {
+      onClose();
+    }
+  };
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -34,6 +46,7 @@ const ModalForm = ({ onClose }) => {
 
       if (response.ok) {
         console.log("The data has been sent successfully");
+        handleOpenSuccessModal();
       } else {
         console.log("Error sending data");
       }
@@ -44,7 +57,7 @@ const ModalForm = ({ onClose }) => {
 
   return (
     <div className="modal-form-container">
-      <div className="modal-form-box">
+      <div className="modal-form-box" onClick={handleCloseModal}>
         <div className="close-form-box" onClick={onClose}>
           <i className="bx bx-left-arrow-alt"></i>
         </div>
@@ -166,6 +179,8 @@ const ModalForm = ({ onClose }) => {
             </p>
           </button>
         </div>
+
+        {showSuccessModal && <ModalWompi />}
       </div>
     </div>
   );
