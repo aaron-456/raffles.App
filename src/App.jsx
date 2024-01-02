@@ -1,4 +1,3 @@
-// import { useState } from "react";
 import "./App.css";
 import FoodPage_section from "./components/FoodPage_section";
 import GeneralInformation_Section from "./components/GeneralInformation_Section";

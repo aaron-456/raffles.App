@@ -27,9 +27,6 @@ const ModalReference = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </div>)};
 
-    )
-}
-
-export default ModalReference
+export default ModalReference;
