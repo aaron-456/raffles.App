@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./styles/shoppingCart_Section.css";
 import ModalForm from "./modales/ModalForm";
+
 
 const ShoppingCart_Section = () => {
   const [numberCount, setNumberCount] = useState(2);
