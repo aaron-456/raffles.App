@@ -2,8 +2,12 @@ import React, { useState } from "react";
 import "../styles/modalForm.css";
 import ModalWompi from "./ModalWompi";
 
-const ModalForm = ({ onClose }) => {
+const ModalForm = ({ onClose, valueToPay }) => {
+  // console.log("valor a pagar : ", valueToPay);
+
   const [showSuccessModal, setShowSuccessModal] = useState(false);
+  const [uniqueReference, setUniqueReference] = useState("");
+  const [hashIntegrity, setHashIntegrity] = useState("");
   const [formData, setFormData] = useState({
     name: "",
     lastname: "",
@@ -45,6 +49,8 @@ const ModalForm = ({ onClose }) => {
     }));
   };
 
+  const priceCents = Number(valueToPay) * 100;
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -68,11 +74,22 @@ const ModalForm = ({ onClose }) => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          ...formData,
+          price: priceCents, // Incluye el precio en la solicitud
+        }),
       });
 
       if (response.ok) {
         console.log("The data has been sent successfully");
+        const data = await response.json();
+        const reference = data.cliente.reference;
+        const integrityHash = data.hash_integrity;
+        setUniqueReference(reference);
+        setHashIntegrity(integrityHash);
+        console.log(reference);
+        console.log(integrityHash);
+
         handleOpenSuccessModal();
         console.log("Los datos se enviaron correctamente");
       } else {
@@ -197,17 +214,17 @@ const ModalForm = ({ onClose }) => {
                 <p>Ticket Mazda CX-5</p>
                 <span>x2</span>
               </div>
-              <p>$30,000</p>
+              <p>{valueToPay}</p>
             </div>
             <hr className="purcharse-hr" />
             <div className="purchase-detail-item">
               <p>Subtotal</p>
-              <p>$30,000</p>
+              <p>{valueToPay}</p>
             </div>
             <hr className="purcharse-hr" />
             <div className="purchase-detail-item">
               <p>Total</p>
-              <p>$30,000</p>
+              <p>{valueToPay}</p>
             </div>
           </div>
 
@@ -228,7 +245,13 @@ const ModalForm = ({ onClose }) => {
             </button>
           </div>
 
-          {showSuccessModal && <ModalWompi />}
+          {showSuccessModal && (
+            <ModalWompi
+              uniqueReference={uniqueReference}
+              hashIntegrity={hashIntegrity}
+              priceCents={priceCents}
+            />
+          )}
         </form>
       </div>
     </div>

@@ -1,6 +1,7 @@
 import React from "react";
 
-const ModalWompi = () => {
+const ModalWompi = ({ uniqueReference, hashIntegrity, priceCents }) => {
+
   const htmlContent = `
     <!-- Contenido de tu archivo HTML aquí -->
     <html>
@@ -14,9 +15,9 @@ const ModalWompi = () => {
         data-render="button"
         data-public-key="pub_test_CoXa04ZrmZojWANJWnWd7szmY3zKOrz1"
         data-currency="COP"
-        data-amount-in-cents="4950000"
-        data-reference="4XMPGKWWPKWQ"
-        data-signature:integrity="37c8407747e595535433ef8f6a811d853cd943046624a0ec04662b17bbf33bf5"
+        data-amount-in-cents="${priceCents}"
+        data-reference="${uniqueReference}"
+        data-signature:integrity="${hashIntegrity}"
       ></script>
     </form>
       </body>

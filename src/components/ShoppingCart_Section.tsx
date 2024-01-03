@@ -76,7 +76,8 @@ const ShoppingCart_Section = () => {
           <i className="bx bx-cart-add"></i>
         </button>
         {visibleModal && (
-            <ModalForm onClose={handleCloseModal} />
+            <ModalForm onClose={handleCloseModal}
+            valueToPay={valueToPay} />
           )}
       </div>
 
@@ -86,6 +87,7 @@ const ShoppingCart_Section = () => {
         <span className="numberZero">0</span>
         <hr className="hr" />
       </div>
+      
     </section>
   );
 };
