@@ -1,16 +1,49 @@
+.main__section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .title__app {
-  width: max-content;
-  font-size: 19px;
-  font-weight: 800;
+  font-size: 20px;
+  font-weight: 700;
   margin: 0 auto;
-  padding-top: 1.9em;
-  padding-bottom: 1.9em;
+  padding-top: 1.1em;
 }
 
 .raffleImg__box {
-  background-color: var(--color-gray);
   margin-top: 1.2em;
+  margin-left: 0.7em;
+  margin-right: 0.7em;
   margin-bottom: 4em;
-  width: 100%;
-  height: 400px;
+}
+
+.swiper-pagination {
+  position: static;
+}
+.img_raflle {
+  height: 300px;
+  object-fit: cover;
+  border-radius: 0.5em;
+}
+
+@media screen and (min-width: 600px) {
+  .raffleImg__box {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5em;
+  }
+
+  .raffleImg__box img {
+    width: 33%;
+    max-height: 400px;
+    box-sizing: border-box;
+    object-fit: cover;
+    border-radius: 0.5em;
+  }
+
+  .title__app {
+    font-size: 3.5vw;
+  }
+  
 }

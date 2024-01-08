@@ -25,6 +25,7 @@ img {
 
 .percentageBar__app {
   background-color: var(--color-pink);
+  margin-top: 1.8em;
   margin-left: 2.1em;
   margin-right: 2.1em;
   height: 26px;
