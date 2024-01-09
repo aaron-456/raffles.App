@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "./styles/shoppingCart_Section.css";
 import ModalForm from "./modales/ModalForm";
 
-
 const ShoppingCart_Section = () => {
   const [numberCount, setNumberCount] = useState(2);
   const [valueToPay, setValueToPay] = useState(30000);
@@ -16,10 +15,8 @@ const ShoppingCart_Section = () => {
   };
 
   const handleCloseModal = () => {
-
     setVisibleModal(false);
     document.body.style.overflow = "auto";
-    
   };
 
   //
@@ -42,7 +39,6 @@ const ShoppingCart_Section = () => {
 
   return (
     <section className="shoppingCart__section">
-      
       <div className="alertMessage__box">
         <span className="alert__span">¡ QUE ESPERAS PARA PARTICIAPAR !</span>
       </div>
@@ -76,18 +72,19 @@ const ShoppingCart_Section = () => {
           <i className="bx bx-cart-add"></i>
         </button>
         {visibleModal && (
-            <ModalForm onClose={handleCloseModal}
-            valueToPay={valueToPay} />
-          )}
+          <ModalForm
+            onClose={handleCloseModal}
+            valueToPay={valueToPay}
+            numberCount={numberCount}
+          />
+        )}
       </div>
-
 
       <div className="hr__box">
         <hr className="hr" />
         <span className="numberZero">0</span>
         <hr className="hr" />
       </div>
-      
     </section>
   );
 };

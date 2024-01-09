@@ -10,15 +10,16 @@ body {
   width: 100%;
   height: 100%;
   z-index: 999;
-  & input{
+  & input {
     padding-left: 10px;
   }
-  & span{
-    position: relative;
-    top:-15px;
-    color: rgb(183, 4, 4);
-    font-size: 0.8rem;
-  }
+}
+
+.error-message {
+  position: relative;
+  top: -15px;
+  color: rgb(183, 4, 4);
+  font-size: 0.8rem;
 }
 
 .modal-form-box {
@@ -44,15 +45,16 @@ body {
 }
 
 .form-text-one {
-  font-size: 14px;
-  font-weight: 800;
+  /* font-size: 14px; */
+  font-size: 2.6vw;
+  font-weight: 700;
   color: var(--color-black);
-  margin-bottom: 1.3em;
+  margin-bottom: 25px;
 }
 
 .form-text-two {
-  font-size: 14px;
-  font-weight: 800;
+  font-size: 2.6vw;
+  font-weight: 700;
   color: var(--color-black);
 }
 
@@ -67,54 +69,60 @@ body {
 
 .user-form label {
   font-size: 13px;
-  font-weight: 700;
+  font-weight: 600;
   padding-left: 0.5em;
+  margin-bottom: 0.2em;
 }
 
 .user-form input {
+  outline: none;
   border: none;
   border-radius: 0.5em;
   height: 45px;
-  margin-bottom: 0.9em;
+  margin-bottom: 1.2em;
 }
 
 .purchase-detail-text {
   text-align: center;
-  font-size: 14px;
-  font-weight: 700;
+  font-size: 2.4vw;
+  font-weight: 600;
 }
 
 .purcharse-hr {
-  margin-left: 2.3em;
-  margin-right: 2.3em;
+  margin-left: 0.1em;
+  margin-right: 0.1em;
   color: black;
-  opacity: 1;
+  opacity: 0.7;
 }
 
 .purchase-detail-item p {
-  font-weight: 900;
+  font-weight: 700;
   font-size: 14px;
+}
+
+.purchase-detail-box {
+  margin-top: 1.2em;
 }
 
 .purchase-detail-text-box {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 0.5em;
+  gap: 0.7em;
 }
 
 .purcharse-detail-text-span {
-  color: var(--color-green);
-  font-size: 33px;
-  font-weight: 700;
+  color: var(--color-green-two);
+  font-size: 28px;
+  font-weight: 600;
 }
 
 .purchase-detail-item {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin-left: 2.3em;
-  margin-right: 2.3em;
+  margin-left: 0.3em;
+  margin-right: 0.3em;
 }
 
 .purchase-tickets {
@@ -134,8 +142,8 @@ body {
 
 .wompi-box {
   width: max-content;
-  margin-left: 2.3em;
-  margin-top: 2.4em;
+  margin-left: 0.1em;
+  margin-top: 2.8em;
 }
 
 .wompi-cont-box img {
@@ -144,7 +152,6 @@ body {
 
 .wompi-cont-box {
   width: 160px;
-
   display: flex;
   background-color: var(--color-white);
   padding: 0.4em;
@@ -157,7 +164,7 @@ body {
 }
 
 .payment-button-box {
-  margin-top: 2em;
+  margin-top: 2.4em;
   margin-bottom: 2.7em;
   display: flex;
   justify-content: center;
@@ -184,7 +191,7 @@ body {
 }
 
 .success-modal {
-  background-color:var(--color-white) ;
+  background-color: var(--color-white);
   width: 80%;
   height: 90%;
   position: fixed;
@@ -192,7 +199,6 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  
 }
 
 .didis {
@@ -200,3 +206,33 @@ body {
   width: 60px;
 }
 
+@media screen and (min-width: 750px) {
+  .close-form-box {
+    margin-left: 1em;
+  }
+
+  .form-text-one,
+  .form-text-two {
+    font-size: 2vw;
+    font-weight: 700;
+    color: var(--color-black);
+  }
+
+  .form-text,
+  .user-form {
+    margin-left: 3.9em;
+    margin-right: 3.9em;
+  }
+
+  .purchase-detail-text {
+    font-size: 1.7vw;
+  }
+
+  .purchase-detail-item p {
+    font-size: 16px;
+  }
+
+  .user-form label {
+    font-size: 17px;
+  }
+}

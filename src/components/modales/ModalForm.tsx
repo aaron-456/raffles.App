@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import "../styles/modalForm.css";
 import ModalWompi from "./ModalWompi";
 
-const ModalForm = ({ onClose, valueToPay }) => {
-  // console.log("valor a pagar : ", valueToPay);
+const ModalForm = ({ onClose, valueToPay, numberCount }) => {
+  console.log(numberCount);
+  
 
   const [showSuccessModal, setShowSuccessModal] = useState(false);
   const [uniqueReference, setUniqueReference] = useState("");
@@ -76,7 +77,8 @@ const ModalForm = ({ onClose, valueToPay }) => {
         },
         body: JSON.stringify({
           ...formData,
-          price: priceCents, // Incluye el precio en la solicitud
+          price: priceCents,
+          number_raffle:numberCount
         }),
       });
 
@@ -212,7 +214,7 @@ const ModalForm = ({ onClose, valueToPay }) => {
             <div className="purchase-detail-item">
               <div className="purchase-tickets">
                 <p>Ticket Mazda CX-5</p>
-                <span>x2</span>
+                <span>{numberCount}</span>
               </div>
               <p>{valueToPay}</p>
             </div>
