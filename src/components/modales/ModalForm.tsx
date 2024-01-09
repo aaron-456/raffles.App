@@ -104,10 +104,8 @@ const ModalForm = ({ onClose, valueToPay }) => {
     setShowSuccessModal(true);
   };
 
-  const handleCloseModal = (e) => {
-    if (e.target.classList.contains("modal-form-box")) {
-      onClose();
-    }
+  const handleCloseModal = () => {
+      setShowSuccessModal(false)
   };
 
   return (
@@ -246,11 +244,14 @@ const ModalForm = ({ onClose, valueToPay }) => {
           </div>
 
           {showSuccessModal && (
-            <ModalWompi
-              uniqueReference={uniqueReference}
-              hashIntegrity={hashIntegrity}
-              priceCents={priceCents}
-            />
+            <div className="da">
+              <ModalWompi
+                uniqueReference={uniqueReference}
+                hashIntegrity={hashIntegrity}
+                priceCents={priceCents}
+              />
+            </div>
+
           )}
         </form>
       </div>
