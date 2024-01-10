@@ -1,0 +1,34 @@
+
+
+
+.percentageBar__app {
+    position: relative;
+    background-color: var(--color-pink);
+    margin-top: 1.8em;
+    margin-left: 2.1em;
+    margin-right: 2.1em;
+    height: 26px;
+    border-radius: 1em;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+    &  .percentage__number {
+        position: absolute;
+        color: rgb(255, 255, 255);
+        font-size: 14px;
+      }
+    
+    & .content_var{
+        position: absolute;
+        left: 0;
+        height: 26px;
+        background-color: rgb(219, 55, 55);
+        border-radius: 20px;
+    }
+}
+  
+
+  

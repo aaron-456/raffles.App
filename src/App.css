@@ -23,19 +23,3 @@ img {
   width: 100%;
 }
 
-.percentageBar__app {
-  background-color: var(--color-pink);
-  margin-top: 1.8em;
-  margin-left: 2.1em;
-  margin-right: 2.1em;
-  height: 26px;
-  border-radius: 1em;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.percentage__number {
-  color: var(--color-white);
-  font-size: 14px;
-}
