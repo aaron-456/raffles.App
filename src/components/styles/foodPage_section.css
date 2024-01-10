@@ -1,47 +1,58 @@
-.foo_page{
-    width: 100%;
+.foo_page {
+  margin-bottom: 3em;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+
+  & .btn1,
+  .btn2,
+  .btn3 {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 2rem;
+    width: 180px;
+    height: 44px;
+    border-radius: 10px;
+    border: none;
+    gap: 0.5rem;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.9);
+  }
 
-    & .btn1, .btn2, .btn3{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 180px;
-        height: 40px;
-        border-radius: 10px;
-        border: none;
-        gap: 0.5rem;
+  & .btn1 {
+    background-color: #4caf50;
+    & img {
+      width: 30px;
     }
-
-    & .btn1{
-        background-color: #4caf50;
-        & img{
-            width: 30px;
-        }
+  }
+  & .btn2 {
+    background-color: #ba68c8;
+    & img {
+      width: 30px;
     }
-    & .btn2{
-        background-color: #ba68c8;
-        & img{
-            width: 30px;
-        }
-    }
+  }
 
-    & .btn3{
-        width: 190px;
-        background-color:#c04848;
-    }
-
-
+  & .btn3 {
+    width: 190px;
+    background-color: #c04848;
+  }
 }
 
-.cont_1{
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    gap: 2rem;
+.cont_1 {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  gap: 2rem;
 }
 
+.btn1 {
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.btn2 {
+    font-weight: 700;
+    font-size: 13px;
+}

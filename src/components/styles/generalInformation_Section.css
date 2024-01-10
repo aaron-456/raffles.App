@@ -1,11 +1,10 @@
-.generalInformation__section {
-}
 
 .title_information {
   font-size: 16px;
-  font-weight: 800;
+  font-weight: 700;
   text-align: center;
-  width: 350px;
+  line-height: 24px;
+  width: 75%;
 }
 
 .awardSpan__box {
@@ -13,7 +12,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 0.9em;
+  margin-top: 1.5em;
   margin-bottom: 2.6em;
   gap: 0.6em;
 }
@@ -23,18 +22,19 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-weight: 800;
+  font-weight: 700;
   font-size: 15px;
-  width: 312px;
+  /* width: 312px; */
+  width: 70%;
   height: 50px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.7);
   text-align: center;
-  border-radius: 0.9em;
+  border-radius: 1.1em;
   cursor: pointer;
 }
 
 .moreInfo__box {
-  width: 350px;
-
+  width: 80%;
   display: flex;
   flex-direction: column;
   gap: 2em;
@@ -47,17 +47,17 @@
 
 .texOne {
   color: var(--color-green);
-  font-weight: 800;
+  font-weight: 700;
 }
 
 .textTwo {
-  font-weight: 800;
+  font-weight: 700;
   font-size: 15px;
 }
 
 .textThree {
   color: var(--color-gray-two);
-  font-weight: 800;
+  font-weight: 700;
   font-size: 14px;
 }
 
@@ -95,4 +95,18 @@
   background-color: black;
   border: none;
   height: 3px;
+}
+
+@media screen and (min-width: 750px) {
+  .title_information {
+    font-size: 1.9vw;
+  }
+
+  .awards__span {
+    width: 50%;
+  }
+
+  .text_moreInfo {
+    font-size: 21px;
+  }
 }

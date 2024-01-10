@@ -33,8 +33,6 @@ const GeneralInformation_Section = () => {
         <span className="numberZero">0</span>
         <hr className="hr" />
       </div>
-
-      
     </section>
   );
 };
