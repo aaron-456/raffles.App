@@ -3,8 +3,6 @@ import "../styles/modalForm.css";
 import ModalWompi from "./ModalWompi";
 
 const ModalForm = ({ onClose, valueToPay, numberCount }) => {
-  console.log(numberCount);
-  
 
   const [showSuccessModal, setShowSuccessModal] = useState(false);
   const [uniqueReference, setUniqueReference] = useState("");
@@ -70,7 +68,7 @@ const ModalForm = ({ onClose, valueToPay, numberCount }) => {
     }
 
     try {
-      const response = await fetch("http://localhost:80/api/post", {
+      const response = await fetch("http://44.211.214.175:8000/api/post", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
