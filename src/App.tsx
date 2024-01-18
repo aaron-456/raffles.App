@@ -4,9 +4,9 @@ import { Route, Routes } from "react-router-dom";
 import FoodPage_section from "./components/FoodPage_section";
 import GeneralInformation_Section from "./components/GeneralInformation_Section";
 import MainSection from "./components/MainSection";
-import Reference_section from "./components/reference_section";
 import ShoppingCart_Section from "./components/ShoppingCart_Section";
 import { useBoolean } from "./context/MiContextoProvider";
+import Reference_section from "./components/ReferenceSection";
 
 function App() {
   const { isBoolean } = useBoolean();
