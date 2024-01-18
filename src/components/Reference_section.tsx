@@ -5,7 +5,8 @@ import iconWasapp from "../assets/icons8-whatsapp.svg";
 import { useBoolean } from "../context/MiContextoProvider";
 
 const Reference_section = () => {
-  const { isReference } = useBoolean();
+  const { isReference, setBoolean } = useBoolean();
+  const [visibleModal, setVisibleModal] = useState(true);
 
   type DataRaffle = {
     numbersR: number[] | null;
@@ -34,24 +35,32 @@ const Reference_section = () => {
     fetchData();
   }, [isReference]);
 
-  return (
+  const handleCloseModal = () => {
+    setVisibleModal(false);
+    setBoolean(false);
+  };
+
+  return visibleModal ? (
     <div className="body_reference_section">
-      <strong>ENHORABUENA!!</strong>
-      <p>
+      <div className="modal_container">
+        <div className="close-form-box btn-arrow" onClick={handleCloseModal}>
+          <i className="bx bx-left-arrow-alt"></i>
+        </div>
+      </div>
+      <span className="highlight_text">ENHORABUENA!!</span>
+      <p className="introduction_text">
         A continuacion los <strong>Numeros</strong> con los cuales vas a{" "}
         <strong>PARTICIPAR</strong>
       </p>
       {data ? (
         <div className="cube_2">
           {data.numbersR?.map((number) => (
-            <span>
-              <span
-                key={number}
-                className="numbers_raffle"
-                style={{ fontSize: "1.5rem" }}
-              >
-                {number} ,
-              </span>
+            <span
+              key={number}
+              className="numbers_raffle"
+              style={{ fontSize: "1.5rem" }}
+            >
+              {number} ,
             </span>
           ))}
         </div>
@@ -63,7 +72,7 @@ const Reference_section = () => {
         </div>
       )}
 
-      <img className="img_go" src={goodluck} alt="img not found" />
+      <img className="img_elf" src={goodluck} alt="img not found" />
 
       <div className="cont_1">
         <button className="btn1">
@@ -79,7 +88,7 @@ const Reference_section = () => {
         </button>
       </div>
     </div>
-  );
+  ) : null;
 };
 
 export default Reference_section;

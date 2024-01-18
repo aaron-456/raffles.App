@@ -18,6 +18,7 @@ const ModalWompi = ({ uniqueReference, hashIntegrity, priceCents }) => {
         data-amount-in-cents="${priceCents}"
         data-reference="${uniqueReference}"
         data-signature:integrity="${hashIntegrity}"
+        data-redirect-url="http://localhost:5174/reference"
       ></script>
     </form>
       </body>

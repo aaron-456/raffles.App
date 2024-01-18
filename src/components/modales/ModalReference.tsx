@@ -5,8 +5,7 @@ import { useBoolean } from "../../context/MiContextoProvider";
 const ModalReference = () => {
   const { setBoolean, setReference } = useBoolean();
   const [ref, setref] = useState("");
-//   const [rafflesData, setRafflesData] = useState();
-// console.log(ref);
+
 
   const inputRef = useRef();
   const handlePaste = () => {
@@ -17,31 +16,6 @@ const ModalReference = () => {
       });
     }
   };
-
-//   const handleTransaction = async () => {
-//     try {
-//       const response = await fetch(
-//         `http://localhost:80/api/get/?transaction_id=${ref}`,
-//         {
-//           method: "GET",
-//           headers: {
-//             "Content-Type": "application/json",
-//           },
-//         }
-//       );
-
-//       if (!response.ok) {
-//         throw new Error("Error al obtener los números de rifa.");
-//       }
-
-//       const data = await response.json();
-//       setRafflesData(data);
-
-//       console.log("Datos de números de rifa:", data);
-//     } catch (error) {
-//       console.error("Error de red:", error.message);
-//     }
-//   };
 
   return (
     <div
