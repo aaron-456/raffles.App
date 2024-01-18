@@ -18,7 +18,7 @@ const Reference_section = () => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `http://localhost:80/api/get/?transaction_id=${isReference}`
+          `https://localhost:80/api/get/?transaction_id=${isReference}`
         );
 
         if (response.ok) {
