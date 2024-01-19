@@ -32,7 +32,7 @@ const PercentageBar = () => {
           console.error("Error en la solicitud GET:", response.status);
         }
       } catch (error) {
-        console.error("Error en la solicitud GET:", error);
+        console.error(`Error en la solicitud GET: ${error.message}`);
       }
     };
 
