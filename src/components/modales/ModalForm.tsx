@@ -3,7 +3,6 @@ import "../styles/modalForm.css";
 import ModalWompi from "./ModalWompi";
 
 const ModalForm = ({ onClose, valueToPay, numberCount }) => {
-
   const [showSuccessModal, setShowSuccessModal] = useState(false);
   const [uniqueReference, setUniqueReference] = useState("");
   const [hashIntegrity, setHashIntegrity] = useState("");
@@ -68,17 +67,20 @@ const ModalForm = ({ onClose, valueToPay, numberCount }) => {
     }
 
     try {
-      const response = await fetch("http://44.211.214.175:8000/api/post", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          ...formData,
-          price: priceCents,
-          number_raffle:numberCount
-        }),
-      });
+      const response = await fetch(
+        "https://525e-2600-1f18-47b6-4700-11e3-42b3-da93-e5a1.ngrok-free.app/api/post",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            ...formData,
+            price: priceCents,
+            number_raffle: numberCount,
+          }),
+        }
+      );
 
       if (response.ok) {
         console.log("The data has been sent successfully");
@@ -105,7 +107,7 @@ const ModalForm = ({ onClose, valueToPay, numberCount }) => {
   };
 
   const handleCloseModal = () => {
-      setShowSuccessModal(false)
+    setShowSuccessModal(false);
   };
 
   return (
@@ -244,14 +246,13 @@ const ModalForm = ({ onClose, valueToPay, numberCount }) => {
           </div>
 
           {showSuccessModal && (
-            <div className="da">
+            <div className="modalWompi_box">
               <ModalWompi
                 uniqueReference={uniqueReference}
                 hashIntegrity={hashIntegrity}
                 priceCents={priceCents}
               />
             </div>
-
           )}
         </form>
       </div>

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import "./styles/modalReference.css";
 import { useBoolean } from "../../context/MiContextoProvider";
 
@@ -45,7 +45,6 @@ const ModalReference = () => {
               onClick={() => {
                 setReference(ref), setBoolean(true);
               }}
-            //   onClick={handleTransaction}
               className="btn_verifi"
             >
               <strong>Verificar</strong>

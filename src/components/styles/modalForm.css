@@ -201,11 +201,6 @@ body {
   transform: translate(-50%, -50%);
 }
 
-.didis {
-  height: 60px;
-  width: 60px;
-}
-
 @media screen and (min-width: 750px) {
   .close-form-box {
     margin-left: 1em;
