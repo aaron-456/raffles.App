@@ -14,19 +14,20 @@ const PercentageBar = () => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          "https://525e-2600-1f18-47b6-4700-11e3-42b3-da93-e5a1.ngrok-free.app/api/progressbar/1",
+          `https://525e-2600-1f18-47b6-4700-11e3-42b3-da93-e5a1.ngrok-free.app/api/progressbar/1`,
           {
             method: "GET",
             headers: {
               Accept: "application/json",
+              "Content-Type": "application/json",
             },
           }
         );
 
         if (response.ok) {
-          const jsonData = await response.json();
-          setData(jsonData);
-          console.log(jsonData);
+          const data = await response.json();
+          setData(data);
+          console.log(data);
         } else {
           console.error("Error en la solicitud GET:", response.status);
         }
