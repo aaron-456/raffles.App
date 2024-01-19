@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import './styles/porcentajeBar.css'
+import "./styles/porcentajeBar.css";
 
 type ProgresData = {
   status: string;
@@ -13,17 +13,19 @@ const PercentageBar = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`http://localhost/api/progressbar/1`);
+        const response = await fetch(
+          `https://525e-2600-1f18-47b6-4700-11e3-42b3-da93-e5a1.ngrok-free.app/progressbar/1`
+        );
 
         if (response.ok) {
           const jsonData = await response.json();
           setData(jsonData);
           console.log(jsonData);
         } else {
-          console.error('Error en la solicitud GET:', response.status);
+          console.error("Error en la solicitud GET:", response.status);
         }
       } catch (error) {
-        console.error('Error en la solicitud GET:', error);
+        console.error("Error en la solicitud GET:", error);
       }
     };
 
@@ -33,11 +35,11 @@ const PercentageBar = () => {
     }, 30000);
 
     return () => clearInterval(intervalId);
-  }, []); 
+  }, []);
 
   return (
     <div className="percentageBar__app">
-      <div className="content_var" style={{width:`${data?.status}%`}}></div>
+      <div className="content_var" style={{ width: `${data?.status}%` }}></div>
       <span className="percentage__number">{data?.status}%</span>
     </div>
   );

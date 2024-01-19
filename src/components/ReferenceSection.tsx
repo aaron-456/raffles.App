@@ -18,7 +18,7 @@ const Reference_section = () => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `https://localhost:80/api/get/?transaction_id=${isReference}`
+          `https://525e-2600-1f18-47b6-4700-11e3-42b3-da93-e5a1.ngrok-free.app/get/?transaction_id=${isReference}`
         );
 
         if (response.ok) {
