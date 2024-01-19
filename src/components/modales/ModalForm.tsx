@@ -68,7 +68,7 @@ const ModalForm = ({ onClose, valueToPay, numberCount }) => {
 
     try {
       const response = await fetch(
-        "https://525e-2600-1f18-47b6-4700-11e3-42b3-da93-e5a1.ngrok-free.app/api/post",
+        `https://525e-2600-1f18-47b6-4700-11e3-42b3-da93-e5a1.ngrok-free.app/api/post`,
         {
           method: "POST",
           headers: {
